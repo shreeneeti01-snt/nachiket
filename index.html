@@ -81,6 +81,15 @@ button:hover {
         blink 0.7s infinite;
 }
 
+.line {
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 5s steps(50, end) forwards;
+}
+
 .typewriter span {
     display: block;
     margin: 12px auto;
@@ -130,21 +139,18 @@ button:hover {
 <!-- SCREEN 1 -->
 <div id="s1" class="screen">
     <img src="photo1.jpg.jpeg">
-    <p class="typewriter">
-        <span>Somewhere between all the random trauma dumping and ur ragebaiting,</span>
-        <span>you became my favourite person. </span>
-        <span>I hope this year gives you the kind of happiness you unknowingly give me every single day </span>
-    </p>
+    <p class="typewriter line">Somewhere between all the random trauma dumping and ur ragebaiting,</p>
+    <p class="typewriter line">you became my favourite person.</p>
+    <p class="typewriter line">I hope this year gives you the kind of happiness you unknowingly give me every single day</p>
     <button onclick="show('s2')">Next →</button>
 </div>
 
 <!-- SCREEN 2 -->
 <div id="s2" class="screen">
     <img src="photo2.jpg.jpeg">
-    <p class="typewriter">
-        <span>with your chubby cheeks and "trying to be aesthetic" poses...</span>
-       <span> you still look like a cute squishy bear,</span>
-        <span>but honestly? I wouldn't trade that for anything</span>
+    <p class="typewriter line">with your chubby cheeks and "trying to be aesthetic" poses...    </p>
+    <p class="typewriter line"> you still look like a cute squishy bear,    </p>
+    <p class="typewriter line">but honestly? I wouldn't trade that for anything    </p>
     </p>
     <button onclick="show('s3')">Next →</button>
 </div>
@@ -153,9 +159,7 @@ button:hover {
 <div id="s3" class="screen">
     <h1>Be honest</h1>
     <img src="photo3.jpg.jpeg">
-    <p class="typewriter"> 
-        <span>Who’s more annoying?</span>
-    </p>
+    <p class="typewriter"> Who’s more annoying? </p>
     
     <button onclick="choose('Gunchu')">Gunchu</button>
     <button onclick="choose('Shree')">Shree</button>
@@ -170,27 +174,24 @@ button:hover {
 <!-- SCREEN 4 -->
 <div id="s4" class="screen">
     <img src="photo4.jpg.jpeg">
-    <p class="typewriter">
-        <span>From strangers to something beautiful; </span>
-        <span>you became my favourite feeling fast <3</span>
-        <span>I'm glad I met you</span>
-    </p>
+    <p class="typewriter line">From strangers to something beautiful;   </p>
+     <p class="typewriter line">you became my favourite feeling fast <3  </p>
+    <p class="typewriter line">I'm glad I met you</p>
     <button onclick="show('s5')">Continue →</button>
 </div>
 
 <!-- FINAL -->
 <div id="s5" class="screen">
     <h1>Happy Birthday Gunchu ♡</h1>
-    <p class="typewriter">
-        <span>Somewhere between all the random conversations,  
-        you became really important to me.</span>
+    <p class="typewriter line">Somewhere between all the random conversations,  </p>  
+          you became really important to me.  </p>
         
-        <span>I don’t say this enough,  
-        but I’m really glad I have you.</span>
+        <p class="typewriter line">I don’t say this enough,    </p>
+        but I’m really glad I have you.  </p>
         
-        <span>And today… I just hope you feel as special  
-        as you make me feel :)</span>
-    </p>
+      <p class="typewriter line">And today… I just hope you feel as special  
+        as you make me feel :)  </p>
+    
 </div>
 
 <script>
