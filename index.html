@@ -76,9 +76,7 @@ button:hover {
     text-align: center;
     overflow: hidden;
     border-right: 2px solid white;
-    animation:
-        typing 8s steps(100, end) forwards,
-        blink 0.7s infinite;
+    animation:typing 8s steps(100, end) forwards;
 }
 
 .line {
@@ -88,27 +86,14 @@ button:hover {
   border-right: 2px solid white;
   width: 0;
   animation: typing 5s steps(50, end) forwards;
+.delay1 { animation-delay: 0s; }
+.delay2 { animation-delay: 3s; }
+.delay3 { animation-delay: 6s; }
+.delay4 { animation-delay: 9s; }
+.delay5 { animation-delay: 12s; }
+.delay6 { animation-delay: 15s; }
+.delay7 { animation-delay: 18s; }
 }
-
-.typewriter span {
-    display: block;
-    margin: 12px auto;
-    color: white;
-    font-size: 30px;
-    overflow: hidden;
-    white-space: nowrap;
-    width: auto;
-    animation: 
-        fadeIn 0.5s forwards,
-        typing 8s steps(100) forwards,
-    text-shadow: 2px 2px 10px rgba(0,0,0,1);
-}
-
-.typewriter span:nth-child(1) { animation-delay: 0.5s; }
-.typewriter span:nth-child(2) { animation-delay: 2.5s; }
-.typewriter span:nth-child(3) { animation-delay: 3.5s; }
-.typewriter span:nth-child(4) { animation-delay: 4.5s; }
-    
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -139,19 +124,18 @@ button:hover {
 <!-- SCREEN 1 -->
 <div id="s1" class="screen">
     <img src="photo1.jpg.jpeg">
-    <p class="typewriter line">Somewhere between all the random trauma dumping and ur ragebaiting,</p>
-    <p class="typewriter line">you became my favourite person.</p>
-    <p class="typewriter line">I hope this year gives you the kind of happiness you unknowingly give me every single day</p>
+    <p class="typewriter line delay1">Somewhere between all the random trauma dumping and ur ragebaiting,</p>
+    <p class="typewriter line delay2">you became my favourite person.</p>
+    <p class="typewriter line delay3">I hope this year gives you the kind of happiness you unknowingly give me every single day</p>
     <button onclick="show('s2')">Next →</button>
 </div>
 
 <!-- SCREEN 2 -->
 <div id="s2" class="screen">
     <img src="photo2.jpg.jpeg">
-    <p class="typewriter line">with your chubby cheeks and "trying to be aesthetic" poses...    </p>
-    <p class="typewriter line"> you still look like a cute squishy bear,    </p>
-    <p class="typewriter line">but honestly? I wouldn't trade that for anything    </p>
-    </p>
+    <p class="typewriter line delay1">with your chubby cheeks and "trying to be aesthetic" poses...    </p>
+    <p class="typewriter line delay2"> you still look like a cute squishy bear,    </p>
+    <p class="typewriter line delay3">but honestly? I wouldn't trade that for anything    </p>
     <button onclick="show('s3')">Next →</button>
 </div>
 
@@ -159,7 +143,7 @@ button:hover {
 <div id="s3" class="screen">
     <h1>Be honest</h1>
     <img src="photo3.jpg.jpeg">
-    <p class="typewriter"> Who’s more annoying? </p>
+    <p class="typewriter line delay1"> Who’s more annoying? </p>
     
     <button onclick="choose('Gunchu')">Gunchu</button>
     <button onclick="choose('Shree')">Shree</button>
@@ -174,23 +158,20 @@ button:hover {
 <!-- SCREEN 4 -->
 <div id="s4" class="screen">
     <img src="photo4.jpg.jpeg">
-    <p class="typewriter line">From strangers to something beautiful;   </p>
-     <p class="typewriter line">you became my favourite feeling fast <3  </p>
-    <p class="typewriter line">I'm glad I met you</p>
+    <p class="typewriter line delay1">From strangers to something beautiful;   </p>
+     <p class="typewriter line delay2">you became my favourite feeling fast <3  </p>
+    <p class="typewriter line delay3">I'm glad I met you</p>
     <button onclick="show('s5')">Continue →</button>
 </div>
 
 <!-- FINAL -->
 <div id="s5" class="screen">
     <h1>Happy Birthday Gunchu ♡</h1>
-    <p class="typewriter line">Somewhere between all the random conversations,  </p>  
-          you became really important to me.  </p>
-        
-        <p class="typewriter line">I don’t say this enough,    </p>
-        but I’m really glad I have you.  </p>
-        
-      <p class="typewriter line">And today… I just hope you feel as special  
-        as you make me feel :)  </p>
+    <p class="typewriter line delay1">Somewhere between all the random conversations,  </p>  
+        <p class="typewriter line delay2">you became really important to me.  </p>
+        <p class="typewriter line delay3">I don’t say this enough,    </p>
+        <p class="typewriter line delay4">but I’m really glad I have you.  </p>
+        <p class="typewriter line delay5">And today… I just hope you feel as special as you make me feel :)  </p>
     
 </div>
 
@@ -205,7 +186,7 @@ function show(id) {
 function choose(person) {
     let text = "";
     
-    if (person === 'shree') {
+    if (person === 'Shree') {
         text = "So you don’t love me anymore?";
     } else {
         text = "Obviously it’s you dumbo";
