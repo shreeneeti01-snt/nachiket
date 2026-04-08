@@ -71,11 +71,17 @@ button:hover {
     transform: scale(1.05);
     background: #ff4757;
 }
+.static {
+    width: auto;
+    overflow: visible;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+}
 .typewriter {
     display: block;
     text-align: center;
     overflow: hidden;
-    border-right: 2px solid white;
     animation:typing 8s steps(100, end) forwards;
 }
 
@@ -83,17 +89,19 @@ button:hover {
   overflow: hidden;
   white-space: nowrap;
   display: block;
-  border-right: 2px solid white;
-  width: 0;
-  animation: typing 5s steps(50, end) forwards;
+  width: 0; 
+  max-width: 100%;
+  animation-name: typing;
+  animation-duration: 3s;
+  animation-timing-function: steps(80, end);
+  animation-fill-mode: forwards;
+}
 .delay1 { animation-delay: 0s; }
 .delay2 { animation-delay: 3s; }
 .delay3 { animation-delay: 6s; }
 .delay4 { animation-delay: 9s; }
 .delay5 { animation-delay: 12s; }
 .delay6 { animation-delay: 15s; }
-.delay7 { animation-delay: 18s; }
-}
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -143,7 +151,7 @@ button:hover {
 <div id="s3" class="screen">
     <h1>Be honest</h1>
     <img src="photo3.jpg.jpeg">
-    <p class="typewriter line delay1"> Who’s more annoying? </p>
+    <p class="line static">Who’s more annoying?</p>
     
     <button onclick="choose('Gunchu')">Gunchu</button>
     <button onclick="choose('Shree')">Shree</button>
