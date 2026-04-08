@@ -1,120 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For You ❤️</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            text-align: center;
-        }
+<title>For You 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        h1 {
-            margin-top: 40px;
-            font-size: 35px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    color: #333;
+    overflow: hidden;
+}
 
-        .container {
-            padding: 20px;
-        }
+.screen {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
 
-        .card {
-            display: none;
-            margin-top: 20px;
-        }
+.active {
+    display: flex;
+}
 
-        img {
-            width: 250px;
-            border-radius: 20px;
-            margin-top: 15px;
-        }
+img {
+    width: 80%;
+    max-width: 280px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-        .message {
-            margin: 20px;
-            font-size: 18px;
-        }
+h1 {
+    margin-bottom: 10px;
+}
 
-        button {
-            padding: 12px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 20px;
-            background: #38bdf8;
-            color: black;
-            font-size: 16px;
-            cursor: pointer;
-        }
+p {
+    font-size: 18px;
+    max-width: 300px;
+}
 
-        button:hover {
-            background: #0ea5e9;
-        }
-    </style>
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #ff6b81;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff4757;
+}
+</style>
 </head>
 
 <body>
+<script>
+function ready() {
+    document.getElementById("start").classList.remove("active");
+    document.getElementById("nextScreen").classList.add("active");
+}
+</script>
 
-<h1>Hey Birthday Boy 🎂</h1>
-
-<div class="container">
-
-    <p>Choose something ↓</p>
-
-    <button onclick="showCard(1)">Memory 1</button>
-    <button onclick="showCard(2)">Memory 2</button>
-    <button onclick="showCard(3)">Special Message</button>
-
-    <br><br>
-
-    <button onclick="playMusic()">Play Music 🎶</button>
-
-    <!-- CARD 1 -->
-    <div id="card1" class="card">
-        <img src="photo1.jpg">
-        <div class="message">
-            This moment means so much to me ❤️<br>
-            You make everything better.
-        </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div id="card2" class="card">
-        <img src="photo2.jpg">
-        <div class="message">
-            We’ve shared the best laughs 😂<br>
-            And I wouldn’t trade it for anything.
-        </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div id="card3" class="card">
-        <img src="photo3.jpg">
-        <div class="message">
-            Happy Birthday 💙<br><br>
-            I’m really lucky to have you.
-        </div>
-    </div>
-
+<!-- START -->
+<div id="start" class="screen active">
+    <h1>Hey Birthday Gunchu</h1>
+    <p>I tried making something for you...  
+maybe it's not as perfect as you,  
+but it’s made with all my heart :) </p>
+    <button onclick="ready()">Start</button>
 </div>
 
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<!-- SCREEN 1 -->
+<div id="s1" class="screen">
+    <img src="WhatsApp Image 2026-04-08 at 12.15.35 PM">
+    <p>Somewhere between all the random trauma dumping and ur ragebaiting, you became my favourite person. I hope this year gives you the kind of happiness you unknowingly give me every single day🫶</p>
+    <button onclick="next(2)">Next →</button>
+</div>
 
+<!-- SCREEN 2 -->
+<div id="s2" class="screen">
+    <img src="WhatsApp Image 2026-04-08 at 12.15.35 PM (1)">
+    <p>with your chubby cheeks and trying to be aesthetic poses...you still look like a cute squishy bear, but honestly? I wouldn't trade that for anything</p>
+    <button onclick="next(3)">Next →</button>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="s3" class="screen">
+    <h1>Be honest </h1>
+    <img src="WhatsApp Image 2026-04-08 at 12.13.12 PM">
+    <p>Who’s more annoying?</p>
+    
+    <button onclick="choose('gunchu')">Gunchu </button>
+    <button onclick="choose('shree')">Shree </button>
+</div>
+
+<!-- SCREEN 4 -->
+<div id="s4" class="screen">
+    <img src="WhatsApp Image 2026-04-08 at 12.13.12 PM (1)">
+    <p>From strangers to something beautiful; you became my favourite feeling fast<3 I'm glad I met you</p>
+    <button onclick="next(5)">Continue</button>
+</div>
+
+<!-- FINAL -->
+<div id="s5" class="screen">
+    <h1>Happy Birthday Gunchu ♡</h1>
+    <p>
+        Somewhere between all the random conversations,  
+        you became really important to me.<br><br>
+        
+        I don’t say this enough,  
+        but I’m really glad I have you.<br><br>
+        
+        And today… I just hope you feel as special  
+        as you make me feel :)
+    </p>
+</div>
 <script>
-function showCard(num) {
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.display = 'none';
-    });
-    document.getElementById('card' + num).style.display = 'block';
+function start() {
+    show(1);
 }
 
-function playMusic() {
-    const music = document.getElementById('music');
-    music.play();
+function next(num) {
+    show(num);
+}
+
+function funny() {
+    show(4);
+}
+
+function show(num) {
+    document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+    document.getElementById("s" + num).classList.add("active");
+}
+</script>
+<script>
+function choose(person) {
+    let text = "";
+    
+    if (person === 'shree') {
+        text = "So you don’t love me anymore? ";
+    } else {
+        text = "Obviously it’s you dumbo";
+    }
+    
+    document.getElementById("response").innerText = text;
 }
 </script>
 
