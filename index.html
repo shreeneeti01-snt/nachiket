@@ -11,7 +11,7 @@ body {
     font-family: 'Patrick Hand', cursive;
     background: 
         linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('background.jpg.jpeg') no-repeat center center/cover;
+        url('background.jpeg') no-repeat center center/cover;
     color: #333;
     overflow-x: hidden;
     overflow-y: auto;
@@ -41,11 +41,15 @@ img {
 }
 
 h1 {
+    color: #FFFFFF;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 18px;
+    color: #FFFFFF;
+    font-size: 1.5rem;
     max-width: 300px;
 }
 
@@ -73,15 +77,15 @@ button:hover {
 }
 
 .typewriter span {
-    display: block;
+    display: inline-block;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
 }
 
 .typewriter span:nth-child(1) { animation-delay: 0.5s; }
-.typewriter span:nth-child(2) { animation-delay: 1.5s; }
-.typewriter span:nth-child(3) { animation-delay: 2.5s; }
-.typewriter span:nth-child(4) { animation-delay: 3.5s; }
+.typewriter span:nth-child(2) { animation-delay: 2.5s; }
+.typewriter span:nth-child(3) { animation-delay: 3.5s; }
+.typewriter span:nth-child(4) { animation-delay: 4.5s; }
 
 @keyframes fadeIn {
     to { opacity: 1; }
