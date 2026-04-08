@@ -3,12 +3,15 @@
 <head>
 <title>For You 🎂</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Indie+Flower&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    font-family: 'Patrick Hand', cursive;
+    background: 
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('background.jpg.jpeg') no-repeat center center/cover;
     color: #333;
     overflow-x: hidden;
     overflow-y: auto;
@@ -62,6 +65,31 @@ button:hover {
     transform: scale(1.05);
     background: #ff4757;
 }
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: blink 0.7s infinite;
+}
+
+.typewriter span {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.typewriter span:nth-child(1) { animation-delay: 0.5s; }
+.typewriter span:nth-child(2) { animation-delay: 1.5s; }
+.typewriter span:nth-child(3) { animation-delay: 2.5s; }
+.typewriter span:nth-child(4) { animation-delay: 3.5s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
 </style>
 </head>
 
@@ -80,22 +108,22 @@ button:hover {
 
 <!-- SCREEN 1 -->
 <div id="s1" class="screen">
-    <img src="photo1.jpg">
-    <p>
-        Somewhere between all the random trauma dumping and ur ragebaiting,<br> 
-        you became my favourite person. <br>
-        I hope this year gives you the kind of happiness you unknowingly give me every single day 🫶
+    <img src="photo1.jpg.jpeg">
+    <pclass="typewriter">
+        <span>Somewhere between all the random trauma dumping and ur ragebaiting,</span>
+        <span>you became my favourite person. </span>
+        <span>I hope this year gives you the kind of happiness you unknowingly give me every single day </span>
     </p>
     <button onclick="show('s2')">Next →</button>
 </div>
 
 <!-- SCREEN 2 -->
 <div id="s2" class="screen">
-    <img src="photo2.jpg">
-    <p>
-        with your chubby cheeks and "trying to be aesthetic" poses...<br>
-        you still look like a cute squishy bear,<br> 
-        but honestly? I wouldn't trade that for anything
+    <img src="photo2.jpg.jpeg">
+    <pclass="typewriter">
+        <span>with your chubby cheeks and "trying to be aesthetic" poses...</span>
+       <span> you still look like a cute squishy bear,</span>
+        <span>but honestly? I wouldn't trade that for anything</span>
     </p>
     <button onclick="show('s3')">Next →</button>
 </div>
@@ -103,8 +131,8 @@ button:hover {
 <!-- SCREEN 3 -->
 <div id="s3" class="screen">
     <h1>Be honest</h1>
-    <img src="photo3.jpg">
-    <p>Who’s more annoying?</p>
+    <img src="photo3.jpg.jpeg">
+    <pclass="typewriter">Who’s more annoying?</p>
     
     <button onclick="choose('gunchu')">Gunchu</button>
     <button onclick="choose('shree')">Shree</button>
@@ -118,11 +146,11 @@ button:hover {
 
 <!-- SCREEN 4 -->
 <div id="s4" class="screen">
-    <img src="photo4.jpg">
-    <p>
-        From strangers to something beautiful; <br>
-        you became my favourite feeling fast <3 
-        I'm glad I met you
+    <img src="photo4.jpg.jpeg">
+    <pclass="typewriter">
+        <span>From strangers to something beautiful; </span>
+        <span>you became my favourite feeling fast <3</span>
+        <span>I'm glad I met you</span>
     </p>
     <button onclick="show('s5')">Continue →</button>
 </div>
@@ -130,15 +158,15 @@ button:hover {
 <!-- FINAL -->
 <div id="s5" class="screen">
     <h1>Happy Birthday Gunchu ♡</h1>
-    <p>
-        Somewhere between all the random conversations,  
-        you became really important to me.<br><br>
+    <pclass="typewriter">
+        <span>Somewhere between all the random conversations,  
+        you became really important to me.</span>
         
-        I don’t say this enough,  
-        but I’m really glad I have you.<br><br>
+        <span>I don’t say this enough,  
+        but I’m really glad I have you.</span>
         
-        And today… I just hope you feel as special  
-        as you make me feel :)
+        <span>And today… I just hope you feel as special  
+        as you make me feel :)</span>
     </p>
 </div>
 
