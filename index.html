@@ -76,7 +76,9 @@ button:hover {
     text-align: center;
     overflow: hidden;
     border-right: 2px solid white;
-    animation: blink 0.7s infinite;
+    animation:
+        typing 8s steps(100, end) forwards,
+        blink 0.7s infinite;
 }
 
 .typewriter span {
@@ -89,8 +91,7 @@ button:hover {
     width: auto;
     animation: 
         fadeIn 0.5s forwards,
-        typing 3.5s steps(30) forwards,
-        blink 0.7s infinite;
+        typing 8s steps(100) forwards,
     text-shadow: 2px 2px 10px rgba(0,0,0,1);
 }
 
@@ -98,7 +99,11 @@ button:hover {
 .typewriter span:nth-child(2) { animation-delay: 2.5s; }
 .typewriter span:nth-child(3) { animation-delay: 3.5s; }
 .typewriter span:nth-child(4) { animation-delay: 4.5s; }
-
+    
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
 @keyframes fadeIn {
     to { opacity: 1; }
 }
@@ -117,7 +122,7 @@ button:hover {
     <p>
         I tried making something for you... <br> 
         maybe it's not as perfect as you, <br> 
-        but it’s made with all my heart :)
+        but it took me quiet some time even with help of AI :)
     </p>
     <button onclick="show('s1')">Start</button>
 </div>
@@ -148,10 +153,12 @@ button:hover {
 <div id="s3" class="screen">
     <h1>Be honest</h1>
     <img src="photo3.jpg.jpeg">
-    <p class="typewriter">Who’s more annoying?</p>
+    <p class="typewriter"> 
+        <span>Who’s more annoying?</span>
+    </p>
     
-    <button onclick="choose('gunchu')">Gunchu</button>
-    <button onclick="choose('shree')">Shree</button>
+    <button onclick="choose('Gunchu')">Gunchu</button>
+    <button onclick="choose('Shree')">Shree</button>
 
     <!-- FIXED: response element added -->
     <p id="response"></p>
@@ -163,7 +170,7 @@ button:hover {
 <!-- SCREEN 4 -->
 <div id="s4" class="screen">
     <img src="photo4.jpg.jpeg">
-    <pclass="typewriter">
+    <p class="typewriter">
         <span>From strangers to something beautiful; </span>
         <span>you became my favourite feeling fast <3</span>
         <span>I'm glad I met you</span>
