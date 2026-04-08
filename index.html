@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 35px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            display: none;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 250px;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .message {
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            background: #38bdf8;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Hey Birthday Boy 🎂</h1>
+
+<div class="container">
+
+    <p>Choose something ↓</p>
+
+    <button onclick="showCard(1)">Memory 1</button>
+    <button onclick="showCard(2)">Memory 2</button>
+    <button onclick="showCard(3)">Special Message</button>
+
+    <br><br>
+
+    <button onclick="playMusic()">Play Music 🎶</button>
+
+    <!-- CARD 1 -->
+    <div id="card1" class="card">
+        <img src="photo1.jpg">
+        <div class="message">
+            This moment means so much to me ❤️<br>
+            You make everything better.
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div id="card2" class="card">
+        <img src="photo2.jpg">
+        <div class="message">
+            We’ve shared the best laughs 😂<br>
+            And I wouldn’t trade it for anything.
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div id="card3" class="card">
+        <img src="photo3.jpg">
+        <div class="message">
+            Happy Birthday 💙<br><br>
+            I’m really lucky to have you.
+        </div>
+    </div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showCard(num) {
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.display = 'none';
+    });
+    document.getElementById('card' + num).style.display = 'block';
+}
+
+function playMusic() {
+    const music = document.getElementById('music');
+    music.play();
+}
+</script>
+
+</body>
+</html>
