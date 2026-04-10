@@ -116,7 +116,14 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 16px;
+}
+    .cover-photo {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .card-inside {
     background: #fff;
@@ -126,11 +133,12 @@ button:hover {
 }
 .card-inside h1 {
     color: #ff4d6d;
+    font-size: 18px;
 }
 
 .card-inside p {
     color: #444;
-    margin: 10px 0;
+    font-size: 12px;
 }
 
 .highlight {
@@ -163,7 +171,7 @@ button:hover {
     position: absolute;
     bottom: 0;
     font-size: 20px;
-    animation: floatUp 3s linear forwards;
+    animation: floatUp 6s linear forwards;
 }
 @keyframes floatUp {
     0% {
@@ -264,19 +272,9 @@ button:hover {
     <button onclick="show('s5')">Continue →</button>
 </div>
 
-<!-- FINAL -->
-<div id="s5" class="screen">
-    <h1>Happy Birthday Gunchu ♡</h1>
-    <p class="typewriter line delay1">Somewhere between all the random conversations,  </p>  
-        <p class="typewriter line delay2">you became really important to me.  </p>
-        <p class="typewriter line delay3">I don’t say this enough,    </p>
-        <p class="typewriter line delay4">but I’m really glad I have you.  </p>
-        <p class="typewriter line delay5">And today… I just hope you feel as special as you make me feel :)  </p>
-     <button onclick="show('s6')">Continue →</button>
-    
 </div>
     <!-- FINAL CARD SCREEN -->
-<div id="s6" class="screen">
+<div id="s5" class="screen">
 
     <div class="card-container" onclick="openCard(this)">
         
@@ -284,6 +282,7 @@ button:hover {
             
             <!-- FRONT -->
             <div class="card-front">
+                 <img src="spiderman.jpeg" class="cover-photo">
                 <h2>Tap to Open 💌</h2>
             </div>
 
