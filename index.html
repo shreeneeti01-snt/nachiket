@@ -133,12 +133,12 @@ button:hover {
 }
 .card-inside h1 {
     color: #ff4d6d;
-    font-size: 18px;
+    font-size: 26px;
 }
 
 .card-inside p {
     color: #444;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .highlight {
@@ -171,7 +171,7 @@ button:hover {
     position: absolute;
     bottom: 0;
     font-size: 20px;
-    animation: floatUp 6s linear forwards;
+    animation: floatUp 10s linear forwards;
 }
 @keyframes floatUp {
     0% {
@@ -211,6 +211,63 @@ button:hover {
 @keyframes blink {
     50% { border-color: transparent }
 }
+    .photo {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    opacity: 0;
+}
+    /* TOP CURVES */
+.p1 { top: 15%; left: 38%; }
+.p2 { top: 12%; left: 48%; }
+.p3 { top: 15%; left: 58%; }
+
+/* UPPER BODY */
+.p4 { top: 25%; left: 30%; }
+.p5 { top: 25%; left: 45%; }
+.p6 { top: 25%; left: 60%; }
+
+/* MIDDLE */
+.p7 { top: 40%; left: 35%; }
+.p8 { top: 40%; left: 55%; }
+
+/* LOWER */
+.p9 { top: 55%; left: 40%; }
+.p10 { top: 55%; left: 50%; }
+
+/* BOTTOM POINT */
+.p11 { top: 70%; left: 45%; }
+.p12 { top: 78%; left: 47%; }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.photo {
+    animation: fadeIn 0.8s forwards;
+}
+.p1 { animation-delay: 0.2s; }
+.p2 { animation-delay: 0.4s; }
+.p3 { animation-delay: 0.6s; }
+.p4 { animation-delay: 0.8s; }
+.p5 { animation-delay: 1s; }
+.p6 { animation-delay: 1.2s; }
+.p7 { animation-delay: 1.4s; }
+.p8 { animation-delay: 1.6s; }
+.p9 { animation-delay: 1.8s; }
+.p10 { animation-delay: 2s; }
+.p11 { animation-delay: 2.2s; }
+.p12 { animation-delay: 2.4s; }
 </style>
 </head>
 
@@ -306,10 +363,7 @@ button:hover {
                 <p class="sign">
                     — Shree
                 </p>
-
-                <button onclick="event.stopPropagation(); nextScreen();">
-                    Next →
-                </button>
+                 <button onclick="show('s6')">Continue →</button>
             </div>
 
         </div>
@@ -319,6 +373,28 @@ button:hover {
 
     </div>
 
+</div>
+    <!-- SCREEN: HEART PHOTOS -->
+<div id="s6" class="screen photo-screen">
+    <h1 class="title">Our Memories</h1>
+
+    <div class="photo-grid">
+        <img src="p1.jpg" class="photo p1">
+        <img src="p2.jpg" class="photo p2">
+        <img src="p3.jpg" class="photo p3">
+        <img src="p4.jpg" class="photo p4">
+        <img src="p5.jpg" class="photo p5">
+        <img src="p6.jpg" class="photo p6">
+        <img src="p7.jpg" class="photo p7">
+        <img src="p8.jpg" class="photo p8">
+        <img src="p9.jpg" class="photo p9">
+        <img src="p10.jpg" class="photo p10">
+        <img src="p11.jpg" class="photo p11">
+        <img src="p12.jpg" class="photo p12">
+         <button onclick="event.stopPropagation(); nextScreen();">
+                    Next →
+                </button>
+    </div>
 </div>
 
 <script>
