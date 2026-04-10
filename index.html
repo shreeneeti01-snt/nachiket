@@ -77,6 +77,114 @@ button:hover {
     overflow: hidden;
     animation:typing 8s steps(60, end) forwards;
 }
+    /* CENTERING */
+#card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3D SPACE */
+.card-container {
+    perspective: 1200px;
+    position: relative;
+}
+
+/* CARD */
+.card-inner {
+    width: 320px;
+    height: 420px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    cursor: pointer;
+}
+
+/* FLIP */
+.card-container.open .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* BOTH SIDES */
+.card-front, .card-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* FRONT DESIGN */
+.card-front {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+/* INSIDE */
+.card-inside {
+    background: #fff;
+    transform: rotateY(180deg);
+    padding: 25px;
+    text-align: center;
+}
+
+/* TEXT */
+.card-inside h1 {
+    color: #ff4d6d;
+}
+
+.card-inside p {
+    color: #444;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+.sign {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #777;
+}
+.card-inside button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+.heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    animation: floatUp 3s linear forwards;
+}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-400px) scale(1.5);
+        opacity: 0;
+    }
+}
 .line {
   overflow: hidden;
   white-space: nowrap;
@@ -176,12 +284,84 @@ button:hover {
         <p class="typewriter line delay5">And today… I just hope you feel as special as you make me feel :)  </p>
     
 </div>
+    <!-- FINAL CARD SCREEN -->
+<div id="s5" class="screen">
+
+    <div class="card-container" onclick="openCard(this)">
+        
+        <div class="card-inner">
+            
+            <!-- FRONT -->
+            <div class="card-front">
+                <h2>Tap to Open 💌</h2>
+            </div>
+
+            <!-- INSIDE -->
+            <div class="card-inside">
+                <h1>Happy Birthday Gunchu ♡</h1>
+
+                <p>
+                   Somewhere between all the random conversations, 
+                    you became really important to me.
+                </p>
+
+                <p>
+                   I don’t say this enough but I’m really glad I have you. 
+                </p>
+
+                <p>
+                    And today… I just hope you feel as special as you make me feel :)
+                </p>
+
+                <p class="sign">
+                    — Shree
+                </p>
+
+                <button onclick="event.stopPropagation(); nextScreen();">
+                    Next →
+                </button>
+            </div>
+
+        </div>
+
+        <!-- HEARTS -->
+        <div class="hearts"></div>
+
+    </div>
+
+</div>
 
 <script>
 // SIMPLIFIED show function
 function show(id) {
     document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
+}
+    function openCard(card) {
+    card.classList.toggle("open");
+
+    // trigger hearts ONLY when opening
+    if (card.classList.contains("open")) {
+        createHearts(card.querySelector(".hearts"));
+    }
+}
+
+function createHearts(container) {
+    for (let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+        container.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
 }
 
 // FIXED choose function
