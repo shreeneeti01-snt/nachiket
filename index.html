@@ -204,10 +204,6 @@ button:hover {
     from { width: 0; }
     to { width: 100%; }
 }
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
 @keyframes blink {
     50% { border-color: transparent }
 }
@@ -220,6 +216,11 @@ button:hover {
     border: 4px solid white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     opacity: 0;
+}
+    .photo-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
     /* TOP CURVES */
 .p1 { top: 15%; left: 38%; }
@@ -279,7 +280,7 @@ button:hover {
     <p>
         I tried making something for you... <br> 
         maybe it's not as perfect as you, <br> 
-        but it took me quiet some time even with the help of AI :)
+        but it took me quite some time even with the help of AI :)
     </p>
     <button onclick="show('s1')">Start</button>
 </div>
@@ -327,8 +328,6 @@ button:hover {
      <p class="typewriter line delay2">you became my favourite feeling fast <3  </p>
     <p class="typewriter line delay3">I'm glad I met you</p>
     <button onclick="show('s5')">Continue →</button>
-</div>
-
 </div>
     <!-- FINAL CARD SCREEN -->
 <div id="s5" class="screen">
@@ -391,10 +390,8 @@ button:hover {
         <img src="p10.jpg" class="photo p10">
         <img src="p11.jpg" class="photo p11">
         <img src="p12.jpg" class="photo p12">
-         <button onclick="event.stopPropagation(); nextScreen();">
-                    Next →
-                </button>
     </div>
+     <button onclick="event.stopPropagation(); show('start');">
 </div>
 
 <script>
