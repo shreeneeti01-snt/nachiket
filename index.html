@@ -99,13 +99,9 @@ button:hover {
     transition: transform 1s ease;
     cursor: pointer;
 }
-
-/* FLIP */
 .card-container.open .card-inner {
     transform: rotateY(180deg);
 }
-
-/* BOTH SIDES */
 .card-front, .card-inside {
     position: absolute;
     width: 100%;
@@ -114,8 +110,6 @@ button:hover {
     backface-visibility: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
-
-/* FRONT DESIGN */
 .card-front {
     background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
@@ -124,16 +118,12 @@ button:hover {
     align-items: center;
     font-size: 22px;
 }
-
-/* INSIDE */
 .card-inside {
     background: #fff;
     transform: rotateY(180deg);
     padding: 25px;
     text-align: center;
 }
-
-/* TEXT */
 .card-inside h1 {
     color: #ff4d6d;
 }
@@ -282,10 +272,11 @@ button:hover {
         <p class="typewriter line delay3">I don’t say this enough,    </p>
         <p class="typewriter line delay4">but I’m really glad I have you.  </p>
         <p class="typewriter line delay5">And today… I just hope you feel as special as you make me feel :)  </p>
+     <button onclick="show('s6')">Continue →</button>
     
 </div>
     <!-- FINAL CARD SCREEN -->
-<div id="s5" class="screen">
+<div id="s6" class="screen">
 
     <div class="card-container" onclick="openCard(this)">
         
