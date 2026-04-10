@@ -216,7 +216,6 @@ button:hover {
     position: absolute;
     width: 130px;
     height: 130px;
-    transform: translate(-50%, -50%);
     object-fit: cover;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     opacity: 1;
@@ -226,53 +225,37 @@ button:hover {
     width: 100%;
     height: 100%;
 }
-/* TOP CURVES */
-.p1 { top: 14%; left: 34%; }
-.p2 { top: 12%; left: 50%; }
-.p3 { top: 14%; left: 66%; }
+.film-strip {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+.frame {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
 
-/* UPPER BODY */
-.p4 { top: 25%; left: 30%; }
-.p5 { top: 25%; left: 50%; }
-.p6 { top: 25%; left: 70%; }
+    border: 8px solid black;
+    border-top: 20px solid black;
+    border-bottom: 20px solid black;
 
-/* MIDDLE (FIXED HEIGHT + CURVE) */
-.p7 { top: 36%; left: 42%; }
-.p8 { top: 36%; left: 58%; }
-
-/* LOWER */
-.p9 { top: 52%; left: 44%; }
-.p10 { top: 52%; left: 56%; }
-
-/* BOTTOM POINT */
-.p11 { top: 68%; left: 48%; }
-.p12 { top: 80%; left: 50%; }
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
+    border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.6s forwards;
+}
+.frame:nth-child(1) { animation-delay: 0.2s; }
+.frame:nth-child(2) { animation-delay: 0.4s; }
+.frame:nth-child(3) { animation-delay: 0.6s; }
+.frame:nth-child(4) { animation-delay: 0.8s; }
+@keyframes slideUp {
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
-
-.photo {
-    animation: fadeIn 0.8s forwards;
-}
-.p1 { animation-delay: 0.2s; }
-.p2 { animation-delay: 0.4s; }
-.p3 { animation-delay: 0.6s; }
-.p4 { animation-delay: 0.8s; }
-.p5 { animation-delay: 1s; }
-.p6 { animation-delay: 1.2s; }
-.p7 { animation-delay: 1.4s; }
-.p8 { animation-delay: 1.6s; }
-.p9 { animation-delay: 1.8s; }
-.p10 { animation-delay: 2s; }
-.p11 { animation-delay: 2.2s; }
-.p12 { animation-delay: 2.4s; }
 </style>
 </head>
 
@@ -380,23 +363,31 @@ button:hover {
 
 </div>
     <!-- SCREEN: HEART PHOTOS -->
-<div id="s6" class="screen photo-screen">
+<div id="s6" class="screen">
     <h1 class="title">You being YOU</h1>
-
-    <div class="photo-grid">
-        <img src="p1.jpeg" class="photo p1">
-        <img src="p2.jpeg" class="photo p2">
-        <img src="p3.jpeg" class="photo p3">
-        <img src="p4.jpeg" class="photo p4">
-        <img src="p5.jpeg" class="photo p5">
-        <img src="p6.jpeg" class="photo p6">
-        <img src="p7.jpeg" class="photo p7">
-        <img src="p8.jpeg" class="photo p8">
-        <img src="p9.jpeg" class="photo p9">
-        <img src="p10.jpeg" class="photo p10">
-        <img src="p11.jpeg" class="photo p11">
-        <img src="p12.jpeg" class="photo p12">
+ <div class="film-strip">
+        <img src="p1.jpeg" class="frame">
+        <img src="p2.jpeg" class="frame">
+        <img src="p3.jpeg" class="frame">
+        <img src="p4.jpeg" class="frame">
     </div>
+
+    <div class="film-strip">
+        <img src="p5.jpeg" class="frame">
+        <img src="p6.jpeg" class="frame">
+        <img src="p7.jpeg" class="frame">
+        <img src="p8.jpeg" class="frame">
+    </div>
+
+    <div class="film-strip">
+        <img src="p9.jpeg" class="frame">
+        <img src="p10.jpeg" class="frame">
+        <img src="p11.jpeg" class="frame">
+        <img src="p12.jpeg" class="frame">
+    </div>
+
+</div>
+
      <button onclick="event.stopPropagation(); show('start');">
 </div>
 
